@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Logo from './Logo'
 import { useRouter } from 'next/router'
 
 const CustomLink = ({href, title, className=""}) => {
@@ -31,6 +32,10 @@ const NavBar = () => {
             <CustomLink href="/articles" title="Articles" className='ml-4'/>
         </nav>
 
+
+        <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
+            <Logo/>
+        </div>
 
     </header>
   )
