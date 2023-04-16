@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import ProfilePic from '../../public/images/profile/developer-pic-1.png'
 import AnimatedText from '@/components/AnimatedText'
+import Link from 'next/link'
+import { LinkArrow } from '@/components/Icons'
 
 
 export default function Home() {
@@ -28,6 +30,24 @@ export default function Home() {
                 As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
                 Explore my latest projects and articles, showcasing my expertise in React.js and web development.
               </p>
+
+
+              {/* Buttons */}
+              <div className='flex items-center self-start mt-2'>
+
+                <Link href="/" target="_blank"
+                      className='flex items-center p-2.5 px-6 rounded-lg font-semibold
+                               bg-dark text-light hover:bg-light hover:text-dark
+                                 border-2 border-solid hover:border-x-dark'>
+                  Resume <LinkArrow className='w-6 ml-1' />
+                </Link>
+
+                <Link href="mailto:abcd@gmail.com" target="_blank"
+                      className='ml-4 text-lg font-medium capitalize text-dark underline'>
+                  Email me
+                </Link>
+
+              </div>
 
             </div>
 
