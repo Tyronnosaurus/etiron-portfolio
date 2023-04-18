@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from 'react'
 import ProfilePic from '../../public/images/profile/developer-pic-2.jpg'
 import { useMotionValue, useInView, useSpring } from 'framer-motion'
 import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
 
 
 
@@ -97,6 +98,7 @@ const about = () => {
                 </div>
 
                 <Skills />
+                <Experience />
 
             </Layout>
             
