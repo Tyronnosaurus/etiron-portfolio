@@ -5,8 +5,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion'
+
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
 import project2 from '../../public/images/projects/portfolio-cover-image.jpg'
+
+
+
+const FramerImage = motion(Image);
 
 
 const FeaturedProject = ({title, summary, img, link, github}) => {
@@ -19,7 +25,9 @@ const FeaturedProject = ({title, summary, img, link, github}) => {
                             rounded-3xl rounded-br-2xl'/>
 
             <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-                <Image src={img} alt={title} />
+                <FramerImage src={img} alt={title} className='w-full h-auto'
+                             whileHover={{scale:1.05}}
+                             transition={{duration:0.1}} />
             </Link>
             
             <div className='w-1/2 flex flex-col items-start justify-between pl-6'>
@@ -49,7 +57,9 @@ const Project = ({title, img, link, github}) => {
                         rounded-3xl rounded-br-2xl'/>
 
         <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
-            <Image src={img} alt={title} />
+            <FramerImage src={img} alt={title} className='w-full h-auto'
+                         whileHover={{scale:1.05}}
+                         transition={{duration:0.1}} />
         </Link>
         
         <div className='w-full flex flex-col items-start justify-between mt-4'>
