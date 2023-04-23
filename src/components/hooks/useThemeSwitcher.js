@@ -2,38 +2,42 @@ import React, { useEffect, useState } from 'react'
 
 
 // Checks user's local preferences to select the initial theme
+// Bug on localhost: always defaults back to light mode on page refresh
 const useThemeSwitcher = () => {
 
-    const preferDarkQuery = "(prefer-color-scheme: dark)"   // To check user's preference to select initial mode
     const [mode, setMode] = useState("")
 
     useEffect(() => {
 
-        const mediaQuery = window.matchMedia(preferDarkQuery)
-        const userPref = window.localStorage.getItem("theme")
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)") // To check user's preference in the browser's settings (for all websites)
 
         const handleChange = () => {
+            const userPref = window.localStorage.getItem("theme")            // To check previously saved value (for this website)
+
             if(userPref){
-                let check = (usePref==="dark") ? "dark" : "light"
+
+                let check = (userPref==="dark") ? "dark" : "light"
                 setMode(check)
-                if(check==="dark") document.documentElement.classList.add("dark")
-                else               document.documentElement.classList.remove("dark")
+                // window.localStorage.setItem("theme", check)
             }else{
                 let check = mediaQuery.matches ? "dark" : "light"
                 setMode(check)
-                if(check==="dark") document.documentElement.classList.add("dark")
-                else               document.documentElement.classList.remove("dark")
             }
         }
 
-        mediaQuery.addEventListener("change", handleChange)
+        handleChange() // Do it once on page load
 
+        mediaQuery.addEventListener("change", handleChange)       
+
+        return( () => mediaQuery.removeEventListener("change", handleChange) ) // Optional cleanup, runs every time the component unmounts
     }, [])
 
 
 
     // Save selected theme on local storage whenever user changes it
     useEffect(() => {
+        console.log("mode:", mode)
+
         if(mode==="dark"){
             window.localStorage.setItem("theme","dark")
             document.documentElement.classList.add("dark")
@@ -45,13 +49,8 @@ const useThemeSwitcher = () => {
 
 
 
-    return (
-        [mode, setMode]
-    )
+    return ( [mode, setMode] )
 }
-
-
-
 
 
 export default useThemeSwitcher

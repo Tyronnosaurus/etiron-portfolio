@@ -15,8 +15,7 @@ export default function Home() {
         <meta name="" content="" />
       </Head>
       
-
-      <main className='flex items-center text-dark w-full min-h-screen'>
+      <main className='flex items-center w-full min-h-screen text-dark dark:text-light'>
         <Layout className='pt-0'>
           <div className='flex items-center justify-between w-full'>
             
@@ -38,12 +37,14 @@ export default function Home() {
                 <Link href="/" target="_blank"
                       className='flex items-center p-2.5 px-6 rounded-lg font-semibold
                                bg-dark text-light hover:bg-light hover:text-dark
-                                 border-2 border-solid hover:border-x-dark'>
+                                 border-2 border-solid border-dark hover:border-dark
+                                 
+                                 dark:bg-light dark:text-dark dark:border-light dark:hover:bg-dark dark:hover:text-light'>
                   Resume <LinkArrow className='w-6 ml-1' />
                 </Link>
 
                 <Link href="mailto:abcd@gmail.com" target="_blank"
-                      className='ml-4 text-lg font-medium capitalize text-dark underline'>
+                      className='ml-4 text-lg font-medium capitalize underline text-dark dark:text-light'>
                   Email me
                 </Link>
 
