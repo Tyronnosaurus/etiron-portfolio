@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 
 // Checks user's local preferences to select the initial theme
-// Bug on localhost: always defaults back to light mode on page refresh
 const useThemeSwitcher = () => {
 
     const [mode, setMode] = useState("")
@@ -41,10 +40,12 @@ const useThemeSwitcher = () => {
         if(mode==="dark"){
             window.localStorage.setItem("theme","dark")
             document.documentElement.classList.add("dark")
-        }else{
+        }
+        else if(mode==="light"){        // We use 'else if' instead of 'else' because there is a 3rd condition (mode==="") 
             window.localStorage.setItem("theme","light")
             document.documentElement.classList.remove("dark")
         }
+        
     }, [mode])
 
 
