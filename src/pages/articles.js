@@ -36,7 +36,8 @@ const FeaturedArticle = ({img, title, time, summary, link}) => {
                   className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
                 <FramerImage src={img} alt={title} className='w-full h-auto'
                              whileHover={{scale:1.05}}
-                             transition={{duration:0.1}} />
+                             transition={{duration:0.1}}
+                             priority sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw" />
             </Link>
             <Link href={link} target='_blank'>
                 <h2 className='capitalize text-2xl font-bold mb-2 mt-4 hover:underline'>
