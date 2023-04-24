@@ -18,10 +18,11 @@ const FramerImage = motion(Image);
 const FeaturedProject = ({title, summary, img, link, github}) => {
 
     return(
-        <article className='w-full flex items-center justify-between border border-solid border-dark bg-light shadow-2xl p-6 relative rounded-2xl'>
+        <article className='w-full flex items-center justify-between border border-solid shadow-2xl p-6 relative rounded-2xl
+                          border-dark bg-light dark:border-light dark:bg-dark'>
         
             {/* Box shadow */}
-            <div className='absolute top-1 -right-3 -z-10 w-[100%] h-[102%] bg-dark
+            <div className='absolute top-1 -right-3 -z-10 w-[100%] h-[102%] bg-dark dark:bg-light
                             rounded-3xl rounded-br-2xl'/>
 
             <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
@@ -31,15 +32,15 @@ const FeaturedProject = ({title, summary, img, link, github}) => {
             </Link>
             
             <div className='w-1/2 flex flex-col items-start justify-between pl-6'>
-                <span className='text-primary font-medium text-xl'>Featured project</span>
+                <span className='text-primary dark:text-primaryDark font-medium text-xl'>Featured project</span>
                 <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
                     <h2 className='my-2 w-full text-left text-4xl font-bold'>{title}</h2>
                 </Link>
-                <p className='my-2 font-medium text-dark'>{summary}</p>
+                <p className='my-2 font-medium'>{summary}</p>
                 
                 <div className='mt-2 flex items-center'>
                     <Link href={github} target="_blank" className='w-10'> <GithubIcon/> </Link>
-                    <Link href={link} target="_blank" className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'> See live </Link>
+                    <Link href={link} target="_blank" className='ml-4 rounded-lg bg-dark text-light dark:bg-light dark:text-dark p-2 px-6 text-lg font-semibold'> See live </Link>
                 </div>
             </div>
 
@@ -50,10 +51,11 @@ const FeaturedProject = ({title, summary, img, link, github}) => {
 
 const Project = ({title, img, link, github}) => {
   return (
-    <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative shadow-2xl'>
+    <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid p-6 relative shadow-2xl
+                      border-dark bg-light dark:border-light dark:bg-dark'>
         
         {/* Box shadow */}
-        <div className='absolute top-0 -right-3 -z-10 w-[100%] h-[102%] bg-dark
+        <div className='absolute top-0 -right-3 -z-10 w-[100%] h-[102%] bg-dark dark:bg-light
                         rounded-3xl rounded-br-2xl'/>
 
         <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
@@ -88,7 +90,7 @@ const projects = () => {
             <meta name="" content=""/>
         </Head>
 
-        <main className='mb-16 flex flex-col items-center justify-center'>
+        <main className='mb-16 flex flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text="Imagination Trumps Knowledge!" className='mb-16'/>
 

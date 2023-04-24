@@ -51,7 +51,7 @@ const about = () => {
                 <div className='grid w-full grid-cols-8 gap-16'>
                     
                     <div className='col-span-3 flex flex-col items-start justify-start'>
-                        <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Biography</h2>
+                        <h2 className='mb-4 text-lg font-bold uppercase'>Biography</h2>
                         <p className='font-medium'>
                         Hi, I'm Eduard Tiron, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
                         and user-centered digital experiences. With 4 years of experience in the field. I am always looking for 
@@ -68,8 +68,8 @@ const about = () => {
                         </p>
                     </div>
 
-                    <div className='col-span-3 relative h-min rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[102%] bg-dark
+                    <div className='col-span-3 relative h-min rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[102%] bg-dark dark:bg-light
                                         rounded-[2rem] rounded-br-2xl'/>
                         <Image src={ProfilePic} alt="Eduard Tiron" className='w-full h-auto rounded-2xl' />
                     </div>

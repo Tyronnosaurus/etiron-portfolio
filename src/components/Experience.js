@@ -15,9 +15,9 @@ const Details = ({position, company, companyLink, time, address, work}) => {
                         whileInView={{y:0}}
                         transition={{duration:0.5, type:"spring"}}>
                 <h3 className='capitalize font-bold text-2xl'>
-                    {position} &nbsp; <a className='text-primary capitalize' href={companyLink} target='_blank'>@ {company}</a>
+                    {position} &nbsp; <a className='text-primary dark:text-primaryDark capitalize' href={companyLink} target='_blank'>@ {company}</a>
                 </h3>
-                <span className='capitalize font-medium text-dark/75'>
+                <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
                     {time} | {address}
                 </span>
                 <p className='font-medium w-full'>
@@ -49,7 +49,7 @@ const Experience = () => {
 
                 {/* Vertical line */}
                 <motion.div style={{scaleY: scrollYProgress}}
-                            className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top'/>
+                            className='absolute left-9 top-0 w-[4px] h-full origin-top bg-dark dark:bg-light'/>
 
                 {/* List of past experiences */}
                 <ul className='w-full flex flex-col items-start justify-between ml-4'>
