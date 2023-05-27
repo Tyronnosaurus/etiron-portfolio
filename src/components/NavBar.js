@@ -63,7 +63,8 @@ const NavBar = () => {
     }
 
     return (
-        <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative
+        <header className='w-full py-8 font-medium flex items-center justify-between relative z-10
+                           px-8 xs:px-16
                            dark:text-light'>
 
             {/* Hamburger menu button. On click, middle bar disappears and the other two rotate 45º to form an X */}
