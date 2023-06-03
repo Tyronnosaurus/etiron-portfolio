@@ -4,8 +4,11 @@ import { motion } from 'framer-motion'
 
 const Skill = ({name, x, y}) => {
   return (
-    <motion.div className='flex items-center justify-center rounded-full font-semibold py-3 px-6 shadow-dark cursor-pointer absolute
-                         bg-dark text-light dark:bg-light dark:text-dark'
+    <motion.div className='flex items-center justify-center rounded-full font-semibold shadow-dark cursor-pointer absolute
+                         bg-dark text-light dark:bg-light dark:text-dark
+                           text-sm lg:text-base
+                           py-1.5 lg:py-2 xl:py-3 
+                           px-3 lg:px-4 xl:px-6'
                 whileHover={{scale:1.05}}
                 initial={{x:0, y:0}}
                 whileInView={{x:x, y:y, transition:{duration:1, ease:"easeInOut"}}}
@@ -20,10 +23,16 @@ const Skill = ({name, x, y}) => {
 const Skills = () => {
   return (
     <>
-        <h2 className='font-bold text-8xl mt-64 w-full text-center'>Skills</h2>
+        <h2 className='font-bold w-full text-center
+                       text-6xl lg:text-8xl
+                       mt-32 lg:mt-64'>
+          Skills
+        </h2>
 
         {/* bg-circularLight defined in tailwind.config.js (created with https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/repeating-radial-gradient) */}
-        <div className='w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark'>
+        <div className='w-full relative flex items-center justify-center rounded-full
+                        bg-circularLight dark:bg-circularDark
+                        h-[50vh] sm:h-[60vh] lg:h-[80vh] xl:h-screen'>
 
             <Skill name="Web"        x="0vw"   y="0vw" />
             <Skill name="HTML"       x="-25vw" y="2vw" />
