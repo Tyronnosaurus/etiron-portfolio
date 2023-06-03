@@ -37,6 +37,26 @@ const AnimatedNumbers = ({value}) => {
 }
 
 
+const AnimatedCounter = ({text, value}) => {
+
+    return(
+        <div className='flex flex-col justify-center items-center md:items-end xl:items-center
+                        text-center md:text-right xl:text-center my-2'>
+
+            <span className='inline-block font-bold
+                             text-4xl xs:text-5xl sm:text-6xl md:text-7xl'>
+                <AnimatedNumbers value={value} />+
+            </span>
+
+            <h2 className='text-xl font-medium capitalize'>{text}</h2>
+
+        </div>
+    )
+
+}
+
+
+
 const about = () => {
   return (
     <>
@@ -47,11 +67,15 @@ const about = () => {
 
         <main className='flex w-full flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
-                <AnimatedText className='mb-16' text="Passion Fuels Purpose!" />
-                <div className='grid w-full grid-cols-8 gap-16'>
+                <AnimatedText className='mb-8 md:mb-16 
+                                         !text-3xl md:!text-5xl lg:!text-6xl xl:!text-5xl'
+                              text="Passion Fuels Purpose!" />
+
+                <div className='grid w-full grid-cols-8 gap-8 md:gap-16'>
                     
-                    <div className='col-span-3 flex flex-col items-start justify-start'>
-                        <h2 className='mb-4 text-lg font-bold uppercase'>Biography</h2>
+                    <div className='flex flex-col items-start justify-startxxx
+                                    col-span-8 md:col-span-3 xl:col-span-5 order-2 md:order-1 '>
+                        <h2 className='mb-4 text-lg font-bold uppercase w-[100%] text-center md:text-left'>Biography</h2>
                         <p className='font-medium'>
                         Hi, I&apos;m Eduard Tiron, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
                         and user-centered digital experiences. With 4 years of experience in the field. I&apos;m always looking for 
@@ -68,34 +92,23 @@ const about = () => {
                         </p>
                     </div>
 
-                    <div className='col-span-3 relative h-min rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+
+                    <div className='relative h-min rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light
+                                    col-span-8 md:col-span-3 order-1 md:order-2 mx-2 xs:mx-8 md:mx-2'>
                         <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[102%] bg-dark dark:bg-light
                                         rounded-[2rem] rounded-br-2xl'/>
                         <Image src={ProfilePic} alt="Eduard Tiron" className='w-full h-auto rounded-2xl' priority
                                sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" />
                     </div>
 
-                    <div className='col-span-2 flex flex-col items-end justify-between'>
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'>
-                                <AnimatedNumbers value={50} />+
-                            </span>
-                            <h2 className='text-xl font-medium capitalize'>satisfied clients</h2>
-                        </div>
 
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'>
-                                <AnimatedNumbers value={40} />+
-                            </span>
-                            <h2 className='text-xl font-medium capitalize'>projects completed</h2>
-                        </div>
-
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'>
-                                <AnimatedNumbers value={4} />+
-                            </span>
-                            <h2 className='text-xl font-medium capitalize'>years of experience</h2>
-                        </div>
+                    <div className='flex flex-col xs:flex-row md:flex-col xl:flex-row
+                                    items-center sm:items-end xl:items-center
+                                    justify-between
+                                    col-span-8 md:col-span-2 xl:col-span-8 order-3'>
+                        <AnimatedCounter value={50} text="satisfied clients" />
+                        <AnimatedCounter value={40} text="projects completed" />
+                        <AnimatedCounter value={5}  text="years of experience" />
                     </div>
 
                 </div>
