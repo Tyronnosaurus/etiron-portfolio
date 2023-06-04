@@ -8,19 +8,21 @@ const Details = ({type, time, place, info}) => {
     const ref = useRef(null)
 
     return(
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 mx-auto flex flex-col items-center justify-between
+                                 w-[80%] lg:w-[60%]'>
             <LiIcon reference={ref}/>
 
             <motion.div initial={{y:50}}
                         whileInView={{y:0}}
                         transition={{duration:0.5, type:"spring"}}>
-                <h3 className='capitalize font-bold text-2xl'>
+                <h3 className='capitalize font-bold text-lg sm:text-xl md:text-2xl'>
                     {type}
                 </h3>
-                <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+                <span className='capitalize font-medium text-dark/75 dark:text-light/75
+                                 text-sm sm:text-base'>
                     {time} | {place}
                 </span>
-                <p className='font-medium w-full'>
+                <p className='font-medium w-full text-sm md:text-base'>
                     {info}
                 </p>
             </motion.div>
@@ -41,18 +43,22 @@ const Education = () => {
 
     return (
         <div className='my-64'>
-            <h2 className='font-bold text-8xl mb-32 w-full text-center'>
+            <h2 className='font-bold w-full text-center
+                           text-4xl md:text-6xl lg:text-8xl
+                           mb-16 lg:mb-32'>
                 Education
             </h2>
         
-            <div ref={ref} className='w-[75%] mx-auto relative'>
+            <div ref={ref} className='mx-auto relative w-full lg:w-[90%] xl:w-[75%]'>
 
                 {/* Vertical line */}
                 <motion.div style={{scaleY: scrollYProgress}}
-                            className='absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-primaryDark origin-top'/>
+                            className='absolute top-0 h-full origin-top bg-dark dark:bg-primaryDark
+                                       w-[2px] lg:w-[4px]
+                                       left-[20px] sm:left-[30px] lg:left-9'/>
 
-                {/* List of past experiences */}
-                <ul className='w-full flex flex-col items-start justify-between ml-4'>
+                {/* List of past studies */}
+                <ul className='w-full flex flex-col items-start justify-between ml-2 sm:ml-4'>
                     <Details type="Bachelor Of Science In Computer Science"
                              time="2016-2020"
                              place="Massachusetts Institute Of Technology (MIT)"
