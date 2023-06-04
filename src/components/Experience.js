@@ -3,24 +3,26 @@ import { motion, useScroll } from 'framer-motion'
 import LiIcon from './LiIcon'
 
 
-const Details = ({position, company, companyLink, time, address, work}) => {
+const Job = ({position, company, companyLink, time, address, work}) => {
 
     const ref = useRef(null)
 
     return(
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 mx-auto flex flex-col items-center justify-between
+                                 w-[80%] lg:w-[60%]'>
             <LiIcon reference={ref}/>
 
             <motion.div initial={{y:50}}
                         whileInView={{y:0}}
                         transition={{duration:0.5, type:"spring"}}>
-                <h3 className='capitalize font-bold text-2xl'>
-                    {position} &nbsp; <a className='text-primary dark:text-primaryDark capitalize' href={companyLink} target='_blank'>@ {company}</a>
+                <h3 className='capitalize font-bold text-lg sm:text-xl md:text-2xl'>
+                    {position}&nbsp;<a className='text-primary dark:text-primaryDark capitalize' href={companyLink} target='_blank'>@ {company}</a>
                 </h3>
-                <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+                <span className='capitalize font-medium text-dark/75 dark:text-light/75
+                                 text-sm sm:text-base'>
                     {time} | {address}
                 </span>
-                <p className='font-medium w-full'>
+                <p className='font-medium w-full text-sm md:text-base'>
                     {work}
                 </p>
             </motion.div>
@@ -41,58 +43,62 @@ const Experience = () => {
 
     return (
         <div className='my-64'>
-            <h2 className='font-bold text-8xl mb-32 w-full text-center'>
+            <h2 className='font-bold w-full text-center
+                           text-4xl md:text-6xl lg:text-8xl
+                           mb-16 lg:mb-32'>
                 Experience
             </h2>
         
-            <div ref={ref} className='w-[75%] mx-auto relative'>
+            <div ref={ref} className='mx-auto relative w-full lg:w-[90%] xl:w-[75%]'>
 
                 {/* Vertical line */}
                 <motion.div style={{scaleY: scrollYProgress}}
-                            className='absolute left-9 top-0 w-[4px] h-full origin-top bg-dark dark:bg-light'/>
+                            className='absolute top-0 h-full origin-top bg-dark dark:bg-light
+                                       w-[2px] lg:w-[4px]
+                                       left-[20px] sm:left-[30px] lg:left-9'/>
 
                 {/* List of past experiences */}
-                <ul className='w-full flex flex-col items-start justify-between ml-4'>
-                    <Details position="Software Engineer"
-                            company="Google"
-                            companyLink="https://google.com"
-                            time="2022-Present"
-                            address="Mountain View, CA"
-                            work="Worked on a team responsible for developing new features for Google's 
-                            search engine, including improving the accuracy and relevance of search results and 
-                            developing new tools for data analysis and visualization."/>
-                    <Details position="Intern"
-                            company="Facebook"
-                            companyLink="https://facebook.com"
-                            time="Summer 2021"
-                            address="Menlo Park, CA."
-                            work="Worked on a team responsible for developing a new mobile app feature that allowed users to create and 
-                            share short-form video content, including designing and implementing a new user interface and developing 
-                            the backend infrastructure to support the feature.
-                            "/>
-                    <Details position="Software Developer"
-                            company="Amazon"
-                            companyLink="https://amazon.com"
-                            time="2020-2021"
-                            address="Seattle, WA."
-                            work="Worked on a team responsible for developing Amazon's mobile app, including implementing new features such 
-                            as product recommendations and user reviews, and optimizing the app's performance and reliability.
-                            "/>
-                    <Details position="Software Developer Intern"
-                            company="Microsoft"
-                            companyLink="https://microsoft.com"
-                            time="Summer 2019"
-                            address="Redmond, WA."
-                            work="Worked on a team responsible for developing new features for Microsoft's Windows operating system, 
-                            including implementing a new user interface for a system settings panel and optimizing the performance of 
-                            a core system component."/>
-                    <Details position="Teaching Assistant"
-                            company="MIT"
-                            companyLink="https://web.mit.edu/"
-                            time="Fall 2018"
-                            address="Massachusetts Ave, Cambridge, MA."
-                            work="Assisted in teaching a course on computer programming, held office hours to help students with assignments, 
-                            and graded exams and assignments."/>
+                <ul className='w-full flex flex-col items-start justify-between ml-2 sm:ml-4'>
+                    <Job position="Software Engineer"
+                         company="Google"
+                         companyLink="https://google.com"
+                         time="2022-Present"
+                         address="Mountain View, CA"
+                         work="Worked on a team responsible for developing new features for Google's 
+                         search engine, including improving the accuracy and relevance of search results and 
+                         developing new tools for data analysis and visualization."/>
+                    <Job position="Intern"
+                         company="Facebook"
+                         companyLink="https://facebook.com"
+                         time="Summer 2021"
+                         address="Menlo Park, CA."
+                         work="Worked on a team responsible for developing a new mobile app feature that allowed users to create and 
+                         share short-form video content, including designing and implementing a new user interface and developing 
+                         the backend infrastructure to support the feature.
+                         "/>
+                    <Job position="Software Developer"
+                         company="Amazon"
+                         companyLink="https://amazon.com"
+                         time="2020-2021"
+                         address="Seattle, WA."
+                         work="Worked on a team responsible for developing Amazon's mobile app, including implementing new features such 
+                         as product recommendations and user reviews, and optimizing the app's performance and reliability.
+                         "/>
+                    <Job position="Software Developer Intern"
+                         company="Microsoft"
+                         companyLink="https://microsoft.com"
+                         time="Summer 2019"
+                         address="Redmond, WA."
+                         work="Worked on a team responsible for developing new features for Microsoft's Windows operating system, 
+                         including implementing a new user interface for a system settings panel and optimizing the performance of 
+                         a core system component."/>
+                    <Job position="Teaching Assistant"
+                         company="MIT"
+                         companyLink="https://web.mit.edu/"
+                         time="Fall 2018"
+                         address="Massachusetts Ave, Cambridge, MA."
+                         work="Assisted in teaching a course on computer programming, held office hours to help students with assignments, 
+                         and graded exams and assignments."/>
                 </ul>
 
             </div>
