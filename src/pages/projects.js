@@ -42,7 +42,7 @@ const FeaturedProject = ({title, summary, img, link, github}) => {
                             pl-0 xl:pl-6
                             pt-3 xl:pt-0'>
                 <span className='text-primary dark:text-primaryDark font-medium
-                                   text-md md:text-xl'>
+                                   text-lg md:text-xl'>
                     Featured project
                 </span>
                 <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
