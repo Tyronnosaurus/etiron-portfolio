@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { TransitionEffect } from '@/components/TransitionEffect'
 
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
 import project2 from '../../public/images/projects/portfolio-cover-image.jpg'
@@ -116,6 +117,8 @@ const projects = () => {
             <title>Eduard Tiron | Projects Page</title>
             <meta name="Projects Page" content="Portfolio of my professional and personal projects"/>
         </Head>
+
+        <TransitionEffect />
 
         <main className='mb-16 flex flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>

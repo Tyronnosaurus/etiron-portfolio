@@ -5,6 +5,7 @@ import ProfilePic from '../../public/images/profile/developer-pic-1.png'
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
+import { TransitionEffect } from '@/components/TransitionEffect'
 
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
         <title>Eduard Tiron</title>
         <meta name="" content="" />
       </Head>
+
+      <TransitionEffect />
       
       <main className='flex items-center w-full min-h-screen text-dark dark:text-light'>
         <Layout className='pt-8 md:pt-16 lg:pt-0'>
