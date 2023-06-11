@@ -1,0 +1,173 @@
+.portfolio__container {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.portfolio__item {
+  height: 300px;
+  background: var(--color-bg-variant);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.portfolio__item:hover { 
+  background: var(--color-primary-variant);
+}
+
+.portfolio__item-image {
+  border: 1px solid gray;
+  height: 100%;
+  height: 200px;
+  border-radius: .4rem;
+  object-fit: cover;
+}
+
+.portfolio__item h3 {
+  margin: 0.8rem 0 2rem;
+  font-size: 1rem !important;
+}
+
+
+
+/*********/
+/* MODAL */
+/*********/
+
+.modal-content {
+  color: #495057 !important;
+}
+
+.portfolio__item-cta {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio__item-btn {
+  padding: 0.5rem 0.5rem !important;
+}
+
+
+
+/************/
+/* CAROUSEL */
+/************/
+.carousel{
+  background-color: black;
+}
+
+/* Slides */
+.carousel-item img{
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #49505783;
+  border-radius: 10px;
+}
+
+
+
+/* Thumbnails */
+.carousel-thumbs {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.carousel-thumbs img {
+  width: 75px !important;
+  height: 75px !important;
+  border: 1px solid grey !important;
+  margin: 0px !important;
+  object-fit: cover;
+
+  margin:auto;
+}
+
+.carousel-thumbs img.active {
+  border: 5px solid grey !important;
+}
+
+/* White margin on thumbnails if user hovers over them */
+.carousel-thumbs img:hover {
+  border: 5px solid black !important;
+}
+
+
+
+
+
+
+
+/* PORTFOLIO BUTTONS */
+.filter-button-wrapper {
+  display:flex;
+  flex-wrap:wrap; /* Items not fitting in a row get wrapped to the next row */
+
+  align-items: center;      /* Center items */
+  justify-content: center;
+
+  padding-bottom: 2rem;
+}
+
+.filter-button-wrapper .btn {
+  /* background-color: white; */
+  margin: 3px;
+  padding: 3px 4px;
+}
+
+/* Add a grey background color on mouse-over */
+.filter-button-wrapper .btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.filter-button-wrapper .btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Prevent blue outline added by Bootstrap by default*/
+.filter-button-wrapper .btn:focus, .btn:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.filter-button-wrapper .separator{
+  height: 25px;
+  border: 1px solid #777;
+  margin: 8px;
+}
+
+
+
+
+
+
+
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+@media screen and (max-width: 1024px) {
+  .portfolio__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
+
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+  .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

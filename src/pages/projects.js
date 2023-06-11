@@ -10,6 +10,7 @@ import { TransitionEffect } from '@/components/TransitionEffect'
 
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
 import project2 from '../../public/images/projects/portfolio-cover-image.jpg'
+import Portfolio from '@/components/pf/portfolio/Portfolio'
 
 
 
@@ -126,6 +127,9 @@ const projects = () => {
                               className='mb-8 md:mb-16 
                                          !text-3xl md:!text-5xl lg:!text-6xl'/>
 
+                
+                {/* <Portfolio /> */}
+                
                 <div className='grid grid-cols-6 md:grid-cols-12 
                                 gap-x-8 lg:gap-x-16
                                 gap-y-8 md:gap-y-16 2xl:gap-y-28'>
